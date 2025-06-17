@@ -1,0 +1,1007 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9; /* Light background for the page */
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+  background-color: rgba(245, 241, 237, 0.9); /* Removed background */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px; /* Adjust as needed */
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5c4033; /* Darker brown for text */
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #af8f6d; /* Accent color for hover/active */
+}
+
+.mobile-menu-btn {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #5c4033;
+  cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  background-image: url("../images/home-slider-main-bg.jpg"); /* Corrected filename */
+  background-size: cover;
+  background-position: 50% 50%; /* Adjust to focus on the girl's face */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #333; /* Default text color for hero */
+}
+
+.hero-content-wrapper {
+  /* background-color: rgba(245, 241, 237, 0.85); */ /* Removed background */
+  padding: 60px 40px;
+  max-width: 550px;
+  margin-left: 10%; /* Position text block to the left */
+  border-radius: 8px;
+  position: relative; /* Added for z-index to work */
+  z-index: 2; /* Lower z-index */
+}
+
+.hero .welcome-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #af8f6d; /* Accent color */
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.hero .hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  line-height: 1.2;
+  color: #5c4033; /* Darker brown for title */
+  margin-bottom: 25px;
+}
+
+.hero .hero-title span {
+  font-family: "Playfair Display", serif;
+}
+
+.hero .hero-hours {
+  font-size: 14px;
+  color: #5c4033;
+  margin-bottom: 8px;
+}
+
+.hero .hero-description {
+  font-size: 15px;
+  color: #6b6b6b;
+  margin-bottom: 30px;
+}
+
+.hero .book-btn {
+  display: inline-block;
+  background-color: #af8f6d; /* Accent color */
+  color: #fff;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.hero .book-btn:hover {
+  background-color: #9c7c59;
+}
+
+/* Decorative Balls */
+.decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So they don't interfere with clicks */
+  overflow: hidden; /* To prevent balls from showing scrollbars if slightly outside */
+}
+
+.decorative-elements .ball {
+  position: absolute;
+  background-image: url("../images/slider-balls.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+.ball-1 {
+  position: absolute;
+  width: 50vw;
+  height: 50vw; /* Assuming ball image is square. background-size: contain will handle it. */
+  top: 10vh; /* Position from top */
+  right: 25vw; /* Half off-screen to the right */
+  background-image: url("../images/slider-balls.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: 1; /* Higher z-index than hero-content-wrapper */
+}
+
+/*.ball-1 {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    right: 10%;
+}*/
+
+/*.ball-2 {
+    width: 90px; /* Increased size */
+/*height: 90px; /* Increased size */
+/*bottom: 15%;
+    right: 20%;
+}
+
+.ball-3 {
+    width: 70px; /* Increased size */
+/*height: 70px; /* Increased size */
+/*bottom: 25%;
+    right: 12%;
+}*/
+
+/* About Us Section Styles */
+.about-section {
+  padding: 80px 0;
+  background-color: #fff; /* White background for this section */
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  text-align: center;
+  color: #5c4033;
+  margin-bottom: 40px; /* Add some space below the title */
+}
+
+.about-image-container {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  /* opacity & transform will be handled by .fade-in class */
+}
+
+.about-image-wrapper {
+  width: 100%;
+  padding-top: 125%; /* Aspect ratio for the image (e.g., 4:5) */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Changed from contain to cover */
+}
+
+.about-content {
+  flex: 1;
+  max-width: 50%;
+  padding-left: 30px;
+}
+
+.about-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #af8f6d; /* Accent color */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.about-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1.3;
+  color: #5c4033; /* Darker brown for title */
+  margin-bottom: 20px;
+}
+
+.about-title span {
+  font-family: "Playfair Display", serif;
+  /* color: #AF8F6D; */ /* Optional: Accent color for part of the title */
+}
+
+.about-description p {
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-btn {
+  display: inline-block;
+  background-color: #af8f6d; /* Accent color */
+  color: #fff;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.about-btn:hover {
+  background-color: #9c7c59;
+}
+
+/* Decorative elements for About Us section */
+.about-decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* Behind content */
+}
+
+.about-left-decor {
+  position: absolute;
+  top: 10%;
+  left: -50px;
+  width: 150px;
+  height: 300px;
+  background-image: url("../images/about-left-decor.png"); /* Add your image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.about-right-decor {
+  position: absolute;
+  bottom: 5%;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/about-right-bg-decor.png"); /* Add your image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.about-ball {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 80px;
+  height: 80px;
+  background-image: url("../images/about-gold-balls1.png"); /* Add your image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for About section elements */
+.about-section.visible .section-title {
+  transition-delay: 0.1s;
+}
+.about-section.visible .about-image-container.fade-in.visible {
+  transition-delay: 0.3s;
+} /* Image container fades in after title */
+
+/* Staggered animation for children of .about-content, triggered when .about-content becomes visible (or its parent .about-section) */
+.about-content .about-title.fade-in.visible {
+  transition-delay: 0.5s;
+} /* Appears after image */
+.about-content .about-description .fade-in.visible {
+  transition-delay: 0.7s;
+}
+
+/* Products Section Styles */
+.products-section {
+  padding: 80px 0;
+  background-color: #fdfbf8; /* Light beige background */
+  position: relative;
+  overflow: hidden;
+}
+
+.products-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px; /* Add spacing between about content and products */
+}
+
+.products-content {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 30px;
+}
+
+.products-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1.3;
+  color: #5c4033; /* Darker brown for title */
+  margin-bottom: 20px;
+}
+
+.products-description {
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.products-icon-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.products-icon-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.products-image-container {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+}
+
+.products-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  aspect-ratio: 4/3; /* Adjust as needed */
+}
+
+/* Our Services Section Styles */
+.services-section {
+  padding: 80px 0;
+  background-image: url("../images/about-main-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-image-container {
+  flex: 1;
+  max-width: 40%;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.service-image:hover {
+  transform: scale(1.03);
+}
+
+.service-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.service-title {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: #5c4033;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 16px;
+  color: #6b6b6b;
+  line-height: 1.7;
+}
+
+/* Slide-in animations for services */
+.slide-in-left {
+  transform: translateX(-50px);
+}
+
+.slide-in-right {
+  transform: translateX(50px);
+}
+
+.slide-in-left.visible,
+.slide-in-right.visible {
+  transform: translateX(0);
+}
+
+/* Hair Styles Gallery Section */
+.hairstyles-gallery-section {
+  padding: 80px 0;
+  background-color: #f9f5f0; /* Light beige background */
+  position: relative;
+  overflow: hidden;
+}
+
+.hairstyles-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  color: #5c4033;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.hairstyles-description {
+  font-size: 18px;
+  color: #6b6b6b;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-style: italic;
+  text-align: center;
+}
+
+.hairstyles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hairstyle-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensure consistent height */
+}
+
+.hairstyle-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hairstyle-image-container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px 0;
+  background-color: #fff;
+}
+
+.hairstyle-image {
+  width: 100%;
+  height: auto; /* Auto height to show full image */
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  max-height: 300px; /* Maximum height to maintain consistency */
+}
+
+.hairstyle-item:hover .hairstyle-image {
+  transform: scale(1.05);
+}
+
+.hairstyle-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.hairstyle-title {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #5c4033;
+  margin-bottom: 8px;
+}
+
+.hairstyle-description {
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+/* Decorative elements for Services section removed as requested */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* About section responsive */
+    .about-container-flex {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+        gap: 20px; /* Adjust gap for stacked layout */
+    }
+
+    .about-image-container {
+        max-width: 100%; /* Image container takes full width */
+        width: 100%;
+        margin-bottom: 20px; /* Space between image and text */
+    }
+
+    .about-image {
+        aspect-ratio: 16/9; /* Or adjust as needed, or remove for natural height */
+    }
+
+    .about-content {
+        max-width: 100%; /* Text content takes full width */
+        text-align: center; /* Center text content */
+    }
+
+    .section-title {
+        font-size: 36px; /* Slightly smaller title on mobile */
+    }
+
+    /* Products section responsive */
+    .products-container {
+        flex-direction: column-reverse; /* Stack items in reverse order on mobile */
+        align-items: center;
+        gap: 30px;
+    }
+
+    .products-content,
+    .products-image-container {
+        max-width: 100%;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .products-content {
+        text-align: center;
+    }
+
+    .products-title {
+        font-size: 36px;
+    }
+
+    .products-description {
+        font-size: 16px;
+    }
+    
+    .products-icon-container {
+        margin-top: 20px;
+    }
+    
+    .products-icon-image {
+        max-width: 80%;
+    }
+    
+    /* Services section responsive */
+    .service-item {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .service-image-container,
+    .service-content {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .service-title {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .service-description {
+        text-align: center;
+    }
+    
+    /* Hairstyles Gallery responsive */
+    .hairstyles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .hairstyles-title {
+        font-size: 36px;
+    }
+    
+    .gallery-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .gallery-item-title {
+        font-size: 20px;
+    }
+    
+    .gallery-item-description {
+        font-size: 13px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 32px; /* Even smaller title */
+        margin-bottom: 20px;
+    }
+
+    .about-title,
+    .products-title,
+    .service-title {
+        font-size: 28px; /* Smaller title size */
+    }
+
+    .about-description p,
+    .products-description,
+    .service-description {
+        font-size: 14px; /* Adjust description font size */
+    }
+    
+    /* For products section, ensure image is above text on very small screens */
+    .products-container {
+        flex-direction: column-reverse; /* Image first, then text */
+    }
+    
+    .products-image {
+        aspect-ratio: 1/1; /* More square aspect ratio on very small screens */
+    }
+    
+    .products-icon-image {
+        max-width: 90%;
+    }
+    
+    /* Services section adjustments for very small screens */
+    .service-item {
+        padding: 15px;
+    }
+    
+    /* Hairstyles Gallery adjustments for very small screens */
+    .hairstyles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hairstyles-title {
+        font-size: 30px;
+    }
+    
+    .hairstyles-description {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .hairstyle-image {
+        max-height: 250px;
+    }
+    
+    /* Gallery responsive for very small screens */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-container {
+        margin-top: 60px;
+    }
+    
+    .gallery-title {
+        font-size: 28px;
+    }
+    
+    .gallery-description {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .gallery-item-title {
+        font-size: 18px;
+    }
+    
+    .gallery-overlay {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    font-size: 44px;
+  }
+  .hero-content-wrapper {
+    margin-left: 5%;
+    padding: 50px 30px;
+  }
+  /*width: 60vw;
+    height: 50vw;
+    top: 45%;
+    right: 1%;*/
+  /*.ball-1 {
+        width: 40vw;
+        height: 50vw;
+        top: 35%;
+        right: 15%;
+    }*/
+  .ball-1 {
+    width: 60vw;
+    height: 50vw;
+    top: 35vh;
+    right: 5vw;
+  }
+
+  /*.ball-1 {
+        width: 50vw;
+        height: 50vw;
+        top: 20%;
+        right: 15%;
+    }*/
+  /*.ball-2 {
+        width: 75px; /* Adjusted size */
+  /*height: 75px; /* Adjusted size */
+  /*bottom: 12%;
+        right: 15%;
+    } */
+  /*.ball-3 {
+        width: 55px; /* Adjusted size */
+  /*height: 55px; /* Adjusted size */
+  /*bottom: 20%;
+        right: 8%;
+    } */
+}
+
+.decorative-elements .right-decor {
+  position: absolute;
+  top: 80px; /* Position below navbar */
+  right: 0;
+  width: 50vw; /* Responsive width */
+  height: 50vh; /* Responsive height */
+  background-image: url("../images/right-decor.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  z-index: 5;
+}
+
+/* Responsive adjustments for the right decoration */
+@media (max-width: 1024px) {
+  .decorative-elements .right-decor {
+    width: 50vh;
+    height: 35vh;
+   }
+}
+
+@media (max-width: 768px) {
+  .decorative-elements .right-decor {
+    width: 40%;
+    height: 25vh;
+    top: 70px; /* Adjust for smaller header on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .decorative-elements .right-decor {
+    display: none;
+    /*width: 45%;
+        height: 12vh;
+        top: 60px;*/
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* Hide desktop nav */
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: rgba(245, 241, 237, 0.98); /* Removed background */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+  nav ul.active {
+    display: flex; /* Show when active */
+  }
+  nav ul li {
+    margin: 10px 20px;
+    text-align: center;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero {
+    background-position: 70% 50%; /* Adjust background for mobile */
+    text-align: center;
+  }
+  .hero-content-wrapper {
+    margin: 0 auto;
+    padding: 40px 20px;
+    max-width: 90%;
+  }
+  .hero .hero-title {
+    font-size: 36px;
+    color: #fff;
+  }
+  .hero .hero-description {
+    color: #766568;
+  }
+  /*.ball-1 {
+        width: 50px;
+        height: 50px;
+        top: 20%;
+        right: 10%;
+    }*/
+  .ball-1 {
+    width: 60vw;
+    height: 50vw;
+    top: 30%;
+    right: 20%;
+  }
+  /*.ball-2 {
+        width: 60px; /* Adjusted size */
+  /*height: 60px; /* Adjusted size */
+  /*bottom: 8%;
+        right: 10%; 
+    }*/
+  /*.ball-3 {
+        display: none; /* Hide smallest ball on small screens if too cluttered */
+  /*}*/
+}
+
+@media (max-width: 480px) {
+  .hero .hero-title {
+    font-size: 30px;
+    color: #fff;
+  }
+  .hero .hero-description {
+    color: #dae2ea;
+  }
+  .hero-content-wrapper {
+    padding: 30px 15px;
+  }
+  .hero-content-wrapper p,
+  .hero-content-wrapper h1 {
+    opacity: 1; /* Always visible */
+    transition: opacity 0.5s ease-out;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Initially filtered */
+    z-index: 0;
+    transition: background-color 0.5s ease-out, opacity 0.5s ease-out;
+    pointer-events: auto; /* Allow interaction from the start */
+  }
+  .logo img {
+    height: 50px;
+  }
+  .ball-1 {
+    width: 90vw;
+    height: 90vw;
+    top: 35%;
+    right: 10%;
+  }
+  .hero.clear-filter::before {
+    background-color: rgba(0, 0, 0, 0); /* Filter removed */
+    opacity: 0; /* Make pseudo-element disappear */
+    pointer-events: none; /* Disable pointer events when clear */
+  }
+  .hero.clear-filter .hero-content-wrapper p,
+  .hero.clear-filter .hero-content-wrapper h1 {
+    opacity: 0; /* Text fades out */
+  }
+
+  /* About section responsive styles for mobile */
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .about-title {
+    font-size: 28px;
+  }
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+  .about-decorative-elements {
+    display: none;
+  }
+}

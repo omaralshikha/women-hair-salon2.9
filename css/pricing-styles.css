@@ -1,0 +1,170 @@
+/* Our Pricing Section Styles */
+.pricing-section {
+  padding: 80px 0;
+  background-image: url("../images/our-pricing.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.pricing-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.pricing-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-title {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  text-align: center;
+  color: #af8f6d;
+  margin-bottom: 15px;
+}
+
+.pricing-subtitle {
+  font-size: 18px;
+  color: #f0f0f0;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-style: italic;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.pricing-category {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-category-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-items {
+  padding: 20px;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-item-name {
+  font-size: 16px;
+  color: #fff;
+}
+
+.pricing-item-price {
+  font-size: 16px;
+  color: #af8f6d; /* Accent color */
+  font-weight: 500;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pricing-btn {
+  display: inline-block;
+  background-color: #af8f6d; /* Accent color */
+  color: #fff;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.pricing-btn:hover {
+  background-color: #9c7c59;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .pricing-title {
+    font-size: 36px;
+  }
+  
+  .pricing-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-category-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-title {
+    font-size: 32px;
+  }
+  
+  .pricing-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  
+  .pricing-category-title {
+    font-size: 22px;
+  }
+  
+  .pricing-item-name,
+  .pricing-item-price {
+    font-size: 15px;
+  }
+}
